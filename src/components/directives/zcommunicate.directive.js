@@ -9,7 +9,7 @@
         restrict: 'E',
         transclude: true,
         scope: {},
-        controller: ['$scope', function MyTabsController($scope) {
+        controller: ['$scope', 'mainService', function MyTabsController($scope, mainService) {
           const panes = $scope.panes = [];
 
           $scope.select = (pane) => {
@@ -25,6 +25,10 @@
             }
             panes.push(pane);
           };
+
+          this.image = mainService.images
+          mainService.getGiphy();
+
         }],
         templateUrl: 'components/htmlPartials/zmy-tabs.html'
       };
@@ -39,6 +43,7 @@
         },
         link: (scope, element, attrs, tabsCtrl) => {
           tabsCtrl.addPane(scope);
+          console.log(tabsCtrl.image);
         },
         templateUrl: 'components/htmlPartials/zmy-pane.html'
       };
