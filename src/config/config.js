@@ -12,7 +12,25 @@
         url: '/home',
         controller: 'mainController',
         controllerAs: 'mainCtrl',
-        templateUrl: 'components/htmlPartials/first.view.html'
+        templateUrl: 'components/htmlPartials/clock.view.html'
+      })
+      .state('move', {
+        url: '/move',
+        controller: 'mainController',
+        controllerAs: 'mainCtrl',
+        templateUrl: 'components/htmlPartials/move.view.html'
+      })
+      .state('transclude', {
+        url: '/transclude',
+        controller: 'mainController',
+        controllerAs: 'mainCtrl',
+        templateUrl: 'components/htmlPartials/transclude.view.html'
+      })
+      .state('communicate', {
+        url: '/communicate',
+        controller: 'mainController',
+        controllerAs: 'mainCtrl',
+        templateUrl: 'components/htmlPartials/zcommunicate.view.html'
       });
 
     $urlRouterProvider

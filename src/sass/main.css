@@ -1,5 +1,33 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #890; }
+  color: #7dff88;
+  background-color: #2d2d2d; }
 
-/*# sourceMappingURL=main.css.map */
+a {
+  font-size: 25px;
+  color: #7dff88; }
+
+p {
+  font-size: 25px; }
+
+.movin {
+  width: 1000px;
+  height: 1000px;
+  border: 10px solid #7dff88; }
+
+.moveable {
+  color: #2d2d2d;
+  font-size: 25px; }
+
+#my-card {
+  display: block;
+  border: 10px solid #7dff88;
+  padding: 5px; }
+
+.pic {
+  float: left;
+  max-width: 350px; }
+
+.scope {
+  height: 500px;
+  width: 1000px; }

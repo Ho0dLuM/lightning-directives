@@ -1,0 +1,23 @@
+<h1>{{mainCtrl.greeting}} Transclusion</h1><br><br>
+<a href="/#/communicate">Link: Communicating Page</a><br><hr>
+
+<!-- Inherited Scope -->
+<trans-directive my-title="mainCtrl.title" my-pic="mainCtrl.pic">
+</trans-directive>
+ <!-- End Inherited Scope -->
+
+ <!-- Transclusional Scope -->
+ <p ng-repeat="text in mainCtrl.content">{{text}}</p>
+ <!-- End Transclusional Scope -->
+
+ <!-- Isolate Scope -->
+ <script type="text/ng-template" id="myCard">
+  <article>
+    <h2>{{ctrl.title}}</h2><br>
+    <img class="pic" ng-src="{{ctrl.pic}}"><br>
+    <div ng-transclude></div>
+  </article>
+ </script>
+ <!-- End Isolate Scope -->
+
+<img class="scope" src="http://teropa.info/images/transclusion_scopes_proto.png"/>
