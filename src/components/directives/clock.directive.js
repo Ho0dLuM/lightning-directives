@@ -9,31 +9,28 @@
   clockDirective.$inject = ['$interval', 'dateFilter'];
 
   function clockDirective($interval, dateFilter) {
-    /*jshint validthis: true */
-    function link(scope, element, attrs) {
-      var format,
-          timeoutId;
-
-      function updateTime() {
-        element.text(dateFilter(new Date(), format));
-      }
-
-      scope.$watch(attrs.clockDirective, function(value) {
-        format = value;
-        updateTime();
-      });
-
-      element.on('$destroy', function() {
-        $interval.cancel(timeoutId);
-      });
-
-      timeoutId = $interval(function() {
-        updateTime();
-      }, 1000);
-    }
-
     return {
-      link: link
+      link: (scope, element, attrs) => {
+        var format,
+            timeoutId;
+
+        function updateTime() {
+          element.text(dateFilter(new Date(), format));
+        }
+
+        scope.$watch(attrs.clockDirective, (value) => {
+          format = value;
+          updateTime();
+        });
+
+        element.on('$destroy', () => {
+          $interval.cancel(timeoutId);
+        });
+
+        timeoutId = $interval(() => {
+          updateTime();
+        }, 1000);
+      }
     };
   }
 

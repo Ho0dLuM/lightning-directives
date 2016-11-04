@@ -10,7 +10,7 @@
         transclude: true,
         scope: {},
         controller: ['$scope', function MyTabsController($scope) {
-          var panes = $scope.panes = [];
+          const panes = $scope.panes = [];
 
           $scope.select = (pane) => {
             angular.forEach(panes, (pane) => {

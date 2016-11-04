@@ -6,11 +6,10 @@
     .module('myApp.components.main')
     .service('mainService', mainService);
 
-  mainService.$inject = [];
+  mainService.$inject = ['$http'];
 
-  function mainService() {
+  function mainService('$http') {
     /*jshint validthis: true */
-
   }
 
 })();
