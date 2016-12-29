@@ -26,8 +26,9 @@
             panes.push(pane);
           };
 
-          this.image = mainService.images
-          mainService.getGiphy();
+          // // http request from service
+          // this.image = mainService.images;
+          // mainService.getGiphy();
 
         }],
         templateUrl: 'components/htmlPartials/zmy-tabs.html'
@@ -43,7 +44,10 @@
         },
         link: (scope, element, attrs, tabsCtrl) => {
           tabsCtrl.addPane(scope);
+
+          // http request from service
           console.log(tabsCtrl.image);
+
         },
         templateUrl: 'components/htmlPartials/zmy-pane.html'
       };
